@@ -12,13 +12,17 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 10f;
     public float verticalSpeed = 5f;
+
     public float upperLimit = 10f;
     public float lowerLimit = -10f;
+
+    public float tiltAngle = 15f;
+    public float tiltSpeed = 90f;
 
     public float invulnerabilityDuration = 2.0f;
     public float shakeDuration = 2.0f;
     public float blinkInterval = 0.1f;
-    public float shakeMagnitude = 0.05f;
+    public float shakeMagnitude = 0.1f;
 
     bool isInvulnerable = false;
     float invulnerabilityTimer = 0f;
@@ -54,6 +58,15 @@ public class PlayerController : MonoBehaviour
         float newY = Mathf.Clamp(transform.position.y + (verticalInput * verticalSpeed * dt), lowerLimit, upperLimit);
         transform.position = new Vector3(transform.position.x + (speed * dt), newY, 0);
 
+        float targetZAngleDegrees = verticalInput * tiltAngle;
+        Quaternion targetWorldRoll = Quaternion.Euler(0, 0, targetZAngleDegrees);
+        Vector3 targetUpForRoll = targetWorldRoll * Vector3.up;
+
+        float stepRadians = tiltSpeed * Mathf.Deg2Rad * Time.deltaTime;
+        Vector3 newObjectUp = Vector3.RotateTowards(transform.up, targetUpForRoll, stepRadians, 0.0f);
+
+        transform.rotation = Quaternion.LookRotation(Vector3.forward, newObjectUp);
+
         if (isInvulnerable)
         {
             invulnerabilityTimer -= dt;
@@ -77,7 +90,7 @@ public class PlayerController : MonoBehaviour
     {
         CurrentHP += ammount;
         HPImg.fillAmount = CurrentHP / MaxHP;
-    }    
+    }
 
     void StartInvulnerability()
     {
@@ -120,11 +133,10 @@ public class PlayerController : MonoBehaviour
     {
         float shakeEndTime = Time.time + shakeDuration;
 
-        // Loop as long as the shake duration hasn't passed AND the player is still invulnerable
         while (Time.time < shakeEndTime && isInvulnerable)
         {
-            float xOffset = UnityEngine.Random.Range(-1f, 1f) * shakeMagnitude;
-            float yOffset = UnityEngine.Random.Range(-1f, 1f) * shakeMagnitude;
+            float xOffset = Random.Range(-1f, 1f) * shakeMagnitude;
+            float yOffset = Random.Range(-1f, 1f) * shakeMagnitude;
 
             transform.position += new Vector3(xOffset, yOffset, 0);
 
