@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Enemy
+  - LevelWon
   layers:
   - Default
   - TransparentFX

@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject LevelWon;
+    public GameObject GameEnded;
     public Image HPImg;
 
     public float MaxHP = 100;
@@ -39,10 +41,13 @@ public class PlayerController : MonoBehaviour
         playerRenderer = GetComponent<Renderer>();
     }
 
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     void Update()
     {
-        Debug.Log(transform.position);
-
         dt = Time.deltaTime;
 
         float verticalInput = 0f;
@@ -84,12 +89,23 @@ public class PlayerController : MonoBehaviour
             StartInvulnerability();
             AddHP(-Damage);
         }
+        if(other.gameObject.CompareTag("LevelWon"))
+        {
+            LevelWon.SetActive(true);
+            Time.timeScale = 0.0f;
+        }
     }
 
     void AddHP(float ammount)
     {
         CurrentHP += ammount;
         HPImg.fillAmount = CurrentHP / MaxHP;
+
+        if (CurrentHP <= 0)
+        {
+            GameEnded.SetActive(true);
+            Time.timeScale = 0.0f;
+        }
     }
 
     void StartInvulnerability()
