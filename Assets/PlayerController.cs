@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
 
     Renderer playerRenderer;
 
-    Vector3 positionAtStartOfInvulnerability;
     Coroutine blinkCoroutine;
     Coroutine shakeCoroutine;
 
@@ -34,14 +33,6 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         playerRenderer = GetComponent<Renderer>();
-        if (playerRenderer == null)
-        {
-            playerRenderer = GetComponent<SpriteRenderer>();
-        }
-        if (playerRenderer == null)
-        {
-            Debug.LogError("PlayerController: No Renderer or SpriteRenderer found on this object for blinking!");
-        }
     }
 
     void Update()
@@ -73,12 +64,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Using OnTriggerEnter, ensure colliders are set up as triggers
     private void OnTriggerEnter(Collider other)
     {
         if (!isInvulnerable && (other.gameObject.CompareTag("Obstacle") || other.gameObject.CompareTag("Enemy")))
         {
-            Debug.Log("Hit: " + other.gameObject.name + " - Becoming invulnerable!");
             StartInvulnerability();
             AddHP(-Damage);
         }
@@ -94,7 +83,6 @@ public class PlayerController : MonoBehaviour
     {
         isInvulnerable = true;
         invulnerabilityTimer = invulnerabilityDuration;
-        positionAtStartOfInvulnerability = transform.position; // Store where invulnerability began
 
         if (blinkCoroutine != null) StopCoroutine(blinkCoroutine);
         if (shakeCoroutine != null) StopCoroutine(shakeCoroutine);
