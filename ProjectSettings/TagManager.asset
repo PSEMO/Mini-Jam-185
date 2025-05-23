@@ -7,6 +7,7 @@ TagManager:
   - Obstacle
   - Enemy
   - LevelWon
+  - Bullet
   layers:
   - Default
   - TransparentFX

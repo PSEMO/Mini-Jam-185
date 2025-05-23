@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,7 +11,9 @@ public class PlayerController : MonoBehaviour
 
     public float MaxHP = 100;
     public float CurrentHP = 100;
-    public float Damage = 10;
+    public float WallDamage = 100;
+    public float BulletDamage = 5;
+    public float OtherDamage = 10;
 
     public float speed = 10f;
     public float verticalSpeed = 5f;
@@ -35,6 +38,8 @@ public class PlayerController : MonoBehaviour
     Coroutine shakeCoroutine;
 
     float dt = 0;
+
+    bool isAlive = true;
 
     void Awake()
     {
@@ -84,10 +89,39 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isInvulnerable && (other.gameObject.CompareTag("Obstacle") || other.gameObject.CompareTag("Enemy")))
+        if (other.gameObject.CompareTag("Obstacle"))
         {
-            StartInvulnerability();
-            AddHP(-Damage);
+            AddHP(-WallDamage);
+            if (isAlive)
+            {
+                EndInvulnerability();
+                StartInvulnerability();
+            }
+            else
+            {
+                StopAllCoroutines();
+            }
+        }
+
+        if (!isInvulnerable)
+        {
+            if (other.gameObject.CompareTag("Bullet"))
+            {
+                AddHP(-BulletDamage);
+                if (isAlive)
+                {
+                    StartInvulnerability();
+                }
+                Destroy(other.gameObject);
+            }
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                AddHP(-OtherDamage);
+                if (isAlive)
+                {
+                    StartInvulnerability();
+                }
+            }
         }
         if(other.gameObject.CompareTag("LevelWon"))
         {
@@ -105,6 +139,7 @@ public class PlayerController : MonoBehaviour
         {
             GameEnded.SetActive(true);
             Time.timeScale = 0.0f;
+            isAlive = false;
         }
     }
 
@@ -133,8 +168,6 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator BlinkEffect()
     {
-        if (playerRenderer == null) yield break;
-
         float blinkEndTime = Time.time + invulnerabilityDuration;
 
         while (Time.time < blinkEndTime && isInvulnerable)

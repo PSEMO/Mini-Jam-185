@@ -25,6 +25,6 @@ public class CameraController : MonoBehaviour
     {
         Position = Offset + Player.position;
 
-        gameObject.transform.position = new Vector3(Position.x, StartPos.y + ((Player.position.y - PlayerStartPos.y) / 3f), Position.z);
+        gameObject.transform.position = new Vector3(Position.x, StartPos.y + ((Player.position.y - PlayerStartPos.y) / 2f), Position.z);
     }
 }
