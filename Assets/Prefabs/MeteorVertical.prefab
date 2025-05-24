@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 725648887538566918, guid: 4eb0063ab2f2c414ba5c6b842fe48f9d, type: 3}
       propertyPath: m_Name
-      value: DamageOnTouchEnemyVertical
+      value: MeteorVertical
       objectReference: {fileID: 0}
     - target: {fileID: 1676777903842565556, guid: 4eb0063ab2f2c414ba5c6b842fe48f9d, type: 3}
       propertyPath: m_LocalPosition.x
