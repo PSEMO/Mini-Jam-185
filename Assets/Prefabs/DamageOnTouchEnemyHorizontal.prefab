@@ -14,11 +14,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1676777903842565556, guid: 4eb0063ab2f2c414ba5c6b842fe48f9d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40
+      value: 67.52
       objectReference: {fileID: 0}
     - target: {fileID: 1676777903842565556, guid: 4eb0063ab2f2c414ba5c6b842fe48f9d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.48
       objectReference: {fileID: 0}
     - target: {fileID: 1676777903842565556, guid: 4eb0063ab2f2c414ba5c6b842fe48f9d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalMoveSpeed: 5
-  horizontalRange: 5
-  horizontalDirection: 1
+  horizontalRange: 100
+  horizontalDirection: -1
   verticalNudgeAmount: 0.75
   verticalNudgeSpeed: 3
