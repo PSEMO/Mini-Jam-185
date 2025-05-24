@@ -6,19 +6,9 @@ public class MoveVerticalSingleDirection : MonoBehaviour
 
     [SerializeField] private float currentDirection = 1; // 1 up, -1 down
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         transform.Translate(Vector3.up * currentDirection * moveSpeed * Time.deltaTime);
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        Destroy(gameObject);                     
     }
 
     private void ReverseDirection()

@@ -36,11 +36,6 @@ public class MoveHorizontalSingleDirection : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        Destroy(gameObject);
-    }
-
     private IEnumerator NudgeVertical(float targetDisplacementY)
     {
         Vector3 startPos = transform.position;
