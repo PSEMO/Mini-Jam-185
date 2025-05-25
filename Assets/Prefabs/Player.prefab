@@ -212,9 +212,9 @@ MonoBehaviour:
   LevelWon: {fileID: 0}
   GameEnded: {fileID: 0}
   HPImg: {fileID: 0}
-  MaxHP: 100
-  CurrentHP: 100
-  WallDamage: 100
+  MaxHP: 15
+  CurrentHP: 15
+  WallDamage: 15
   BulletDamage: 5
   OtherDamage: 10
   speed: 15
@@ -223,7 +223,7 @@ MonoBehaviour:
   lowerLimit: -25
   tiltAngle: 15
   tiltSpeed: 90
-  invulnerabilityDuration: 2
+  invulnerabilityDuration: 0
   shakeDuration: 2
   blinkInterval: 0.1
   shakeMagnitude: 0.1

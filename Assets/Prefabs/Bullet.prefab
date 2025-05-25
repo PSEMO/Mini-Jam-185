@@ -122,5 +122,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 30
-  lifeTime: 3
+  lifeTime: 10
   movementDirection: {x: 0, y: 0, z: 0}
