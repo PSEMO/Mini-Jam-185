@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -41,6 +42,9 @@ public class PlayerController : MonoBehaviour
 
     bool isAlive = true;
 
+    public AudioResource[] audioResources = new AudioResource[4];
+    AudioSource audioSource;
+
     void Awake()
     {
         playerRenderer = GetComponent<Renderer>();
@@ -48,6 +52,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         Time.timeScale = 1.0f;
     }
 
@@ -134,6 +140,13 @@ public class PlayerController : MonoBehaviour
     {
         CurrentHP += ammount;
         HPImg.fillAmount = CurrentHP / MaxHP;
+
+        if(ammount < 0)
+        {
+            audioSource.resource = audioResources[Random.Range(0, 4)];
+            audioSource.Stop();
+            audioSource.Play();
+        }
 
         if (CurrentHP <= 0)
         {

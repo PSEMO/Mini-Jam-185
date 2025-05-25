@@ -313,7 +313,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 247
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -523,6 +523,11 @@ MonoBehaviour:
   firePoint: {fileID: 1853748031}
   shootDirection: {x: -1, y: 0, z: 0}
   fireRate: 0.5
+  audioResources:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &817168703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,7 +819,7 @@ GameObject:
   - component: {fileID: 1051750804}
   - component: {fileID: 1051750803}
   - component: {fileID: 1051750802}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +849,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a4a7a46445d3cb34d937d0b9d677ce25, type: 2}
+  - {fileID: 2100000, guid: 365b7225ab143e142a261a606b471cba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -852,7 +857,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
+  m_ReceiveGI: 2
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1018,6 +1023,11 @@ MonoBehaviour:
   firePoint: {fileID: 897534411}
   shootDirection: {x: 0, y: -1, z: 0}
   fireRate: 0.5
+  audioResources:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!54 &1299722541
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1190,6 +1200,11 @@ MonoBehaviour:
   firePoint: {fileID: 281486331}
   shootDirection: {x: 0, y: 1, z: 0}
   fireRate: 0.5
+  audioResources:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1421957881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2027,6 +2042,10 @@ PrefabInstance:
     - target: {fileID: 8587256408914680301, guid: 72df058fea6c89b4aba8f608c220af17, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8655683126060461551, guid: 72df058fea6c89b4aba8f608c220af17, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -999,6 +999,11 @@ MonoBehaviour:
   firePoint: {fileID: 1853748031}
   shootDirection: {x: -1, y: 0, z: 0}
   fireRate: 0.5
+  audioResources:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &817168703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1373,7 +1378,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a4a7a46445d3cb34d937d0b9d677ce25, type: 2}
+  - {fileID: 2100000, guid: 365b7225ab143e142a261a606b471cba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1665,6 +1670,11 @@ MonoBehaviour:
   firePoint: {fileID: 897534411}
   shootDirection: {x: 0, y: -1, z: 0}
   fireRate: 0.5
+  audioResources:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!54 &1299722541
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1837,6 +1847,11 @@ MonoBehaviour:
   firePoint: {fileID: 281486331}
   shootDirection: {x: 0, y: 1, z: 0}
   fireRate: 0.5
+  audioResources:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1421957881
 MonoBehaviour:
   m_ObjectHideFlags: 0
