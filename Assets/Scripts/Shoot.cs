@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Shoot : MonoBehaviour
 {
@@ -17,8 +18,12 @@ public class Shoot : MonoBehaviour
 
     private float nextFireTime;
 
+    public AudioResource[] audioResources = new AudioResource[4];
+    AudioSource audioSource;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         // Initialize nextFireTime so the player can shoot immediately
         nextFireTime = 0f;
     }
@@ -52,6 +57,13 @@ public class Shoot : MonoBehaviour
         if (newBullet != null)
         {
             newBullet.movementDirection = shootDirection;
+        }
+
+        //if(Random.Range(0, 2) > 0.5f)
+        {
+            audioSource.resource = audioResources[Random.Range(0, 4)];
+            audioSource.Stop();
+            audioSource.Play();
         }
     }
 }
