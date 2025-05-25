@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        playerRenderer = GetComponent<Renderer>();
+        playerRenderer = transform.GetChild(0).GetComponent<Renderer>();
     }
 
     private void Start()
