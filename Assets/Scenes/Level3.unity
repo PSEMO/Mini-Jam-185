@@ -3166,14 +3166,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 990604870267152687, guid: 670e191eb1005e24f8b9c9bb701586eb, type: 3}
-      propertyPath: rolloffMode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 990604870267152687, guid: 670e191eb1005e24f8b9c9bb701586eb, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
-      value: 1.0018768
-      objectReference: {fileID: 0}
     - target: {fileID: 3171063525785512287, guid: 670e191eb1005e24f8b9c9bb701586eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.1
