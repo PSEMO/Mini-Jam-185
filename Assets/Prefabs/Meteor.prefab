@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 568649066524935261}
   - component: {fileID: 1372978505266744389}
   - component: {fileID: 4328925708539798604}
-  - component: {fileID: 8641988570608569569}
   - component: {fileID: 1786754784471913475}
   - component: {fileID: 2209607323560617449}
   m_Layer: 0
-  m_Name: DamageOnTouchEnemy
+  m_Name: Meteor
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,23 +110,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8641988570608569569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725648887538566918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9399bf3f81f7c8d499b180a83896668f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontalMoveSpeed: 5
-  horizontalRange: 100
-  horizontalDirection: -1
-  verticalNudgeAmount: 0.75
-  verticalNudgeSpeed: 3
 --- !u!114 &1786754784471913475
 MonoBehaviour:
   m_ObjectHideFlags: 0
